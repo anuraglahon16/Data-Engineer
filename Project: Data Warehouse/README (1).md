@@ -4,6 +4,8 @@ Using the song and event datasets, you'll need to create a star schema optimized
 # Fact Table
 songplays - records in event data associated with song plays i.e. records with page NextSong
 songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+
+
 # Dimension Tables
 users - users in the app
 user_id, first_name, last_name, gender, level
@@ -24,8 +26,10 @@ create_table.py is where you'll create your fact and dimension tables for the st
 etl.py is where you'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
 sql_queries.py is where you'll define you SQL statements, which will be imported into the two other files above.
 README.md is where you'll provide discussion on your process and decisions for this ETL pipeline.
+
 # Project Steps
 Below are steps you can follow to complete each component of this project.
+
 
 # Create Table Schemas
 Design schemas for your fact and dimension tables
@@ -35,6 +39,8 @@ Write SQL DROP statements to drop tables in the beginning of create_tables.py if
 Launch a redshift cluster and create an IAM role that has read access to S3.
 Add redshift database and IAM role info to dwh.cfg.
 Test by running create_tables.py and checking the table schemas in your redshift database. You can use Query Editor in the AWS Redshift console for this.
+
+
 # Build ETL Pipeline
 Implement the logic in etl.py to load data from S3 to staging tables on Redshift.
 Implement the logic in etl.py to load data from staging tables to analytics tables on Redshift.
